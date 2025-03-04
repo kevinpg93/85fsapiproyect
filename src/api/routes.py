@@ -45,7 +45,7 @@ def create_token():
     if user is None:
         # el usuario no se encontró en la base de datos
         return jsonify({"msg": "Bad username or password"}), 400
-    access_token = create_access_token(identity=user.id)
+    access_token = create_access_token(identity=str(user.id))
     
     return jsonify({"id": user.id, "email": user.correo , "token":access_token}), 200
     
