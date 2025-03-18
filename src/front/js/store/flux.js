@@ -54,9 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 			},
 			 privateRoute : () => {
-				fetch(getStore().backendUrl + "/api/protected", {
+				fetch(getStore().backendUrl + "api/protected", {
 					method:"GET",
-					headers:{'Authorization': `Bearer ${localStorage.getItem("token")}`
+					headers:{'Authorization': `Bearer ${localStorage.getItem("token")}`,
+					
                 }
 				})
 					.then(response => {
